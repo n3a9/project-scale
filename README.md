@@ -1,3 +1,6 @@
+![passing build](https://img.shields.io/badge/build-passing-brightgreen.svg)
+![hack davis](https://img.shields.io/badge/HackDavis-hell%20yeah-brightgreen.svg)
+
 # the-network
 
 An online platform for users to post projects and find team members to work with.
