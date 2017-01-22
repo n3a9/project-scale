@@ -16,9 +16,7 @@
 
 		<script src="js/authvar.js"></script>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
-  <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
   <script src="http://cdn.jsdelivr.net/jquery.validation/1.13.1/jquery.validate.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
 </head>
 <body>
 		<div class="sup">
@@ -32,7 +30,18 @@
 
 <form method='post'>
 
-<br>
+
+<!--<label class="custom-control custom-radio">
+  <input id="radio1" name="fields" type="radio" value="all fields" checked class="custom-control-input">
+  <span class="custom-control-indicator"></span>
+  <span class="custom-control-description">Search all projects</span>
+</label>
+<label class="custom-control custom-radio">
+  <input id="radio2" name="fields" type="radio" value="category" class="custom-control-input">
+  <span class="custom-control-indicator"></span>
+  <span class="custom-control-description">Search a category (example: designer)</span>
+</label>
+<br>-->
 <div class="col-lg-6">
     <div class="input-group">
       <input type="text" class="form-control" name="search" id="search" placeholder="Search for..."></form>
@@ -43,9 +52,12 @@
   </div>
 
 <script>
+
 function search() {
+
 		var keytext = document.forms[0].search.value;
-		var fields = "all fields";
+		var fields = document.forms[0].fields.value;
+
         if (window.XMLHttpRequest) {
             xmlhttp = new XMLHttpRequest();
         } else {
@@ -59,9 +71,12 @@ function search() {
         xmlhttp.open("GET","results.php?key="+keytext+"&fields="+fields,true);
         xmlhttp.send();
 }
+
 function comment(pid) {
+
 		var text = document.getElementById(pid).value;
 		document.getElementById(pid).value = "";
+
         if (window.XMLHttpRequest) {
             xmlhttp = new XMLHttpRequest();
         } else {
@@ -75,37 +90,43 @@ function comment(pid) {
         xmlhttp.open("GET","comment.php?pid="+pid+"&text="+text,true);
         xmlhttp.send();
 }
+
 </script>
 <div id="results" >
 
 <div class="container-fluid projects-block" id="filters" style="width: 90%;">
 
-	<div class="row">
-		<ul class="option-set mx-auto" data-option-key="filter">
-					<li><a href="#filter" class="selected" data-option-value="*">All</a></li>
-					<li>/</li>
-					<li><a href="#filter" data-option-value=".art">Art/Design</a></li>
-					<li>/</li>
-					<li><a href="#filter" data-option-value=".cs">Computer Science</a></li>
-					<li>/</li>
-					<li><a href="#filter" data-option-value=".engineering">Engineering</a></li>
-					<li>/</li>
-					<li><a href="#filter" data-option-value=".humanities">Humanities</a></li>
-					<li>/</li>
-					<li><a href="#filter" data-option-value=".math">Math</a></li>
-					<li>/</li>
-					<li><a href="#filter" data-option-value=".science">Science</a></li>
-					<li>/</li>
-					<li><a href="#filter" data-option-value=".other">Other</a></li>
-				</ul>
-	</div>
+	<ul class="option-set mx-auto" data-option-key="filter">
+			<li><a href="#filter" class="selected" data-option-value="*">All</a></li>
+			<li>/</li>
+			<li><a href="#filter" data-option-value=".art">Art/Design</a></li>
+			<li>/</li>
+			<li><a href="#filter" data-option-value=".cs">Computer Science</a></li>
+			<li>/</li>
+			<li><a href="#filter" data-option-value=".engineering">Engineering</a></li>
+			<li>/</li>
+			<li><a href="#filter" data-option-value=".humanities">Humanities</a></li>
+			<li>/</li>
+			<li><a href="#filter" data-option-value=".math">Math</a></li>
+			<li>/</li>
+			<li><a href="#filter" data-option-value=".science">Science</a></li>
+			<li>/</li>
+			<li><a href="#filter" data-option-value=".other">Other</a></li>
+		</ul>
 
 <?php
+
 include('db.php');
+
 if (isset($_POST['search'])){
 	if($_POST['search'] != ""){
 		$key = $_POST['search'];
-		$mydata = $mysqli->query("SELECT * FROM `project` WHERE name_of_project LIKE '%".$key."%' OR description LIKE '%".$key."%' OR looking_at LIKE '%".$key."%' ORDER BY datetime DESC;");
+		if($_POST['fields'] == "all fields"){
+	$mydata = $mysqli->query("SELECT * FROM `project` WHERE name_of_project LIKE '%".$key."%' OR description LIKE '%".$key."%' OR looking_at LIKE '%".$key."%' ORDER BY datetime DESC;");
+}
+else{
+	$mydata = $mysqli->query("SELECT * FROM `project` WHERE looking_at LIKE '%".$key."%' ORDER BY datetime DESC;");
+}
 	}
 	else{
 		$mydata = $mysqli->query("SELECT * FROM `project` ORDER BY datetime DESC;");
@@ -119,11 +140,13 @@ $num_row = $mydata->num_rows;
 
 
 <?php
+
 //FIXME: EDIT THE STYLE OF THIS
-echo "<div class='row projects isotope' >";
+echo "<div class='row projects isotope' id='projectsWrap'>";
 for($i = 0; $i < $num_row; $i++){
 	$row = $mydata->fetch_assoc();
 	echo "<div  class='col-md-4 project-item ";
+
 	if($row['category'] == "Art/Design"){
 		echo "art";
 	}
@@ -145,6 +168,7 @@ for($i = 0; $i < $num_row; $i++){
 	else {
 		echo "other";
 	}
+
 	echo " shadow'>
 			<div class='picture'>
 				<h5>
@@ -156,11 +180,13 @@ for($i = 0; $i < $num_row; $i++){
 	echo $row['looking_at'];
 	echo "<br><i class='tags'>#".$row['category']."</i>
 		</div>";
+
 	echo "
 	<!-- Button trigger modal -->
 <button type='button' class='lateral' data-toggle='modal' data-target='#myModal".$row['id']."'>
   <i class='fa fa-expand' aria-hidden='true'></i>
 </button>
+
 <!-- Modal -->
 <div class='modal fade' id='myModal".$row['id']."' tabindex='-1' role='dialog' aria-labelledby='exampleModalLabel' aria-hidden='true'>
   <div class='modal-dialog' role='document'>
@@ -189,6 +215,7 @@ for($c = 0; $c < $num_row2; $c++){
 </div>
 <?php
 	  echo"
+
       </div>
       <div class='modal-footer'>
         <div class='col-lg-12'>
@@ -203,6 +230,7 @@ for($c = 0; $c < $num_row2; $c++){
     </div>
   </div>
 </div>";
+
 echo "</div>";
 }
 echo "</div>";
