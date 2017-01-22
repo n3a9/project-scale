@@ -57,7 +57,6 @@ $select.change(function() {
 		  	$optionLinks = $optionSets.find('a');
 
 				$optionLinks.click(function(){
-						alert("3");
 
 							var $this = $(this);
 							// don't proceed if already selected
