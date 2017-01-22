@@ -1,7 +1,12 @@
 <html>
 <head>
-
-
+<?php
+ $uid = $_COOKIE['uid'];
+ include('db.php');
+ $mydata = $mysqli->query("SELECT * FROM `account` WHERE uid = '".$uid."'");
+ $row = $mydata->fetch_assoc();
+ $username = $row['username'];
+?>
 <link rel="stylesheet" type="text/css" href="style.css">
 
  <script src="https://www.gstatic.com/firebasejs/3.6.6/firebase.js"></script>
@@ -24,14 +29,14 @@
 <body>
 <div class="sup">
 <ul>
-	<li><a href="main_page.php" style="font-size: 1.2rem;">Explore</a></li>
-	<li><a href="create_project.php" style="font-size: 1.2rem;">Create</a></li>
-	<li><a href="account.php" style="color: #D8D8D8 !important; font-size: 1.2rem;">Profile</a></li>
+	<li><a href="main_page.php" style="color: #FFF; font-size: 1.2rem;">Explore</a></li>
+	<li><a href="create_project.php" style="color: #FFF; font-size: 1.2rem;">Create</a></li>
+	<li><a href="account.php" style="color: #FFF; font-size: 1.2rem;">Profile</a></li>
 </ul>
 </div>
 
 <div style="width:80%; margin: 0 auto; padding-top: 1em;">
-	<img class="shadow" id="profile_pic" src="/profile.jpg" width="300" height="300">
+	<img class="shadow" id="profile_pic" src="<?php echo $row['photourl'];?>" width="300" height="300">
 <br>
 	<div style="padding-top: 2em;">
 		<h2>Name : <span><?php echo $username; ?></span></h2><br>
@@ -40,29 +45,14 @@
 	</div>
 </div>
 
-<?php
- $uid = $_COOKIE['uid'];
- include('db.php');
- $mydata = $mysqli->query("SELECT * FROM `account` WHERE uid = '".$uid."'");
- $row = $mydata->fetch_assoc();
- $username = $row['username'];
-?>
-
-
 
 <?php
-
 include('db.php');
-
 $mydata = $mysqli->query("SELECT * FROM `project` WHERE username = '".$username."' ORDER BY datetime DESC;");
 $num_row = $mydata->num_rows;
-
 ?> 
-
 <?php
-
 //FIXME: EDIT THE STYLE OF THIS
-
 for($i = 0; $i < $num_row; $i++){
 	$row = $mydata->fetch_assoc();
 	echo "<div class = 'projects shadow'>";
@@ -74,7 +64,6 @@ for($i = 0; $i < $num_row; $i++){
 	echo $row['username'];
 	echo "</div>";
 }
-
-?>
+?>-->
 </body>
 </html>

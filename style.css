@@ -17,6 +17,23 @@ body{
 	font-size:16px;
 }
 
+.comment_div{
+	padding:8px;
+}
+.lateral{
+	background:none;
+	position:absolute;
+	bottom:5;
+	right:5;
+	border:0;
+	padding:4px;
+	cursor:pointer;
+	outline:none;
+}
+.lateral:hover{
+	color:#999999;
+}
+
 #profile_pic{
 	margin-top:32px;
 	border:10px solid white;
@@ -24,13 +41,14 @@ body{
 
 .projects{
 	margin:8px;
-	width:220px;
-	height:190px;
+	width:350px;
+	height:200px;
 	padding:8px;
 	background-color:white;
 	position:relative;
 	float:left;
 }
+
 
 .shadow{
 	-moz-box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
@@ -50,20 +68,12 @@ body{
 	padding-top: 1em;
 	padding-bottom: .2em;
 }
-
 .sup li {
 	list-style: none;
 	display: inline-block;
 	padding-right: 2em;
 }
 
-.sup a {
-	color: #FFF !important;
+.tags{
+	color:#999999;
 }
-
-.sup a:hover{
-	text-decoration: none;
-	color: #D8D8D8 !important;
-}
-
-	
