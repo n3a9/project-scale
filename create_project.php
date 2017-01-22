@@ -40,7 +40,7 @@ $id =0;
 				<form action='post.php' method='post'>
 					<input type="hidden" name='id' value="<?php echo $id; ?>">
 					<h1 style="font-size:1.5em; margin-bottom: -.2em;">Name of Project</h1><br>
-					<input type='text' name='name_of_project'  style="width: 500px; height: 30px;"><br>
+					<input type='text' name='name_of_project'  style="width: 500px; height: 30px; font-size:14px;"><br>
 					<h1 style="font-size:1.5em; margin-bottom: -.2em; padding-top: 1em;">Description</h1>
 					<textarea name='description' style="margin-top:1.7em; width: 600px; height: 250px; font-size:14px;"></textarea>
 					<h1 style="font-size:1.5em; margin-bottom: -.2em; padding-top: 1.3em;">Looking For</h1>
@@ -53,7 +53,7 @@ $id =0;
 						<option value="Science">Science</option>
 						<option value="Other">O</option>
 					</select><br>
-					<input type='text' name='looking_at' style="margin-top:1em; width: 500px; height: 50px;"><br>
+					<textarea name='description' style="margin-top:1.7em; width: 600px; height: 100px; font-size:14px;"></textarea><br>
 					<input type='submit' style="border: none; background-color: #D8D8D8; margin-top: 2em; width: 75px; height: 30px;">
 				</form>
 			</center>
