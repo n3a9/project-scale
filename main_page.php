@@ -122,12 +122,7 @@ include('db.php');
 if (isset($_POST['search'])){
 	if($_POST['search'] != ""){
 		$key = $_POST['search'];
-		if($_POST['fields'] == "all fields"){
 	$mydata = $mysqli->query("SELECT * FROM `project` WHERE name_of_project LIKE '%".$key."%' OR description LIKE '%".$key."%' OR looking_at LIKE '%".$key."%' ORDER BY datetime DESC;");
-}
-else{
-	$mydata = $mysqli->query("SELECT * FROM `project` WHERE looking_at LIKE '%".$key."%' ORDER BY datetime DESC;");
-}
 	}
 	else{
 		$mydata = $mysqli->query("SELECT * FROM `project` ORDER BY datetime DESC;");
