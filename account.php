@@ -24,14 +24,18 @@
     <link rel="stylesheet" href="css/main.css"/>
 
     <script src="js/authvar.js"></script>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
+  <script src="http://cdn.jsdelivr.net/jquery.validation/1.13.1/jquery.validate.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
 
 </head>
 <body>
 <div class="sup">
 <ul>
-	<li><a href="main_page.php" style="font-size: 1.2rem;">Explore</a></li>
-	<li><a href="create_project.php" style="font-size: 1.2rem;">Create</a></li>
-	<li><a href="account.php" style="color: #D8D8D8 !important; font-size: 1.2rem;">Profile</a></li>
+	<li><a href="main_page.php" style="color: #FFF; font-size: 1.2rem;">Explore</a></li>
+	<li><a href="create_project.php" style="color: #FFF; font-size: 1.2rem;">Create</a></li>
+	<li><a href="account.php" style="color: #FFF; font-size: 1.2rem;">Profile</a></li>
 </ul>
 </div>
 
@@ -41,9 +45,26 @@
 	<div style="padding-top: 2em;">
 		<h2>Name : <span><?php echo $username; ?></span></h2><br>
 		<h2 style="margin-top: -1em;">email: <span><?php echo $row['email']?></span></h2><br>
-		<p style="font-size: .8em; font-weight: normal; margin-top: -1em;">this is where the bio will be</p>
+		<?php 
+		if ($uid != $_COOKIE['uid']){
+			echo "<p style='font-size: .8em; font-weight: normal; margin-top: -1em;'>".$row['bio']."</p>";
+		}
+		else{
+			echo "
+			<form method='post' action='edit_profile.php'>
+			<div class='col-lg-6'>
+				<div class='input-group'>
+				  <input type='text' name='bio' class='form-control' placeholder='Write here your bio...' value='".$row['bio']."'>
+				  <span class='input-group-btn'>
+					<button class='btn btn-primary' type='submit'><i class='fa fa-pencil' aria-hidden='true'></i></button>
+				  </span>
+				</div>
+			  </div>
+			</div>
+			</form>";
+		}
+		?>
 	</div>
-</div>
 
 
 <?php
@@ -53,17 +74,59 @@ $num_row = $mydata->num_rows;
 ?> 
 <?php
 //FIXME: EDIT THE STYLE OF THIS
+
 for($i = 0; $i < $num_row; $i++){
 	$row = $mydata->fetch_assoc();
-	echo "<div class = 'projects shadow'>";
-	echo "<p style='text-align:center'><b>".$row['name_of_project']."</b></p>";
+	echo "<div class = 'projects_a shadow'>";
+	echo "<p style='text-align:center'><b>".$row['name_of_project']."</b></p><div style='height:50px;overflow:hidden;text-overflow:ellipsis;'>";
 	echo $row['description'];
-	echo "<br>Looking for: ";
+	echo "</div><br>Looking for: ";
 	echo $row['looking_at'];
-	echo "<br>Username:";
-	echo $row['username'];
-	echo "</div>";
+	echo "<br><i class='tags'>#".$row['category']."</i>";
+	
+	echo "
+	<!-- Button trigger modal -->
+<button type='button' class='lateral' data-toggle='modal' data-target='#myModal".$row['id']."'>
+  <i class='fa fa-expand' aria-hidden='true'></i>
+</button>
+
+<!-- Modal -->
+<div class='modal fade' id='myModal".$row['id']."' tabindex='-1' role='dialog' aria-labelledby='exampleModalLabel' aria-hidden='true'>
+  <div class='modal-dialog' role='document'>
+    <div class='modal-content'>
+      <div class='modal-header'>
+        <h5 class='modal-title' id='exampleModalLabel".$row['id']."'>".$row['name_of_project']."</h5>".$row['username']."
+        <button type='button' class='close' data-dismiss='modal' aria-label='Close'>
+          <span aria-hidden='true'>&times;</span>
+        </button>
+      </div>
+      <div class='modal-body'><p>".$row['description']."</p>
+	  <p>Looking for ".$row['looking_at']."</p>
+	  </div>
+	  <div class='modal-body'>";
+	  $mydata2 = $mysqli->query("SELECT * FROM `comments`,account WHERE account.uid = comments.uid AND pid = '".$row['id']."'ORDER BY datetime DESC;");
+	  $num_row2 = $mydata2->num_rows;
+
+for($c = 0; $c < $num_row2; $c++){
+	$row2 = $mydata2->fetch_assoc();
+	echo "<b>".$row2['username']."</b>: ".$row2['text']."<br>";
 }
-?>-->
+	  
+	  echo"
+        
+      </div>
+      <div class='modal-footer'>
+        <div class='comment_div'><input type='text' placeholder='write a comment' name='".$row['id']."' id='".$row['id']."'>
+		<button onClick=\"comment('".$row['id']."')\"> send </button></div>
+      </div>
+    </div>
+  </div>
+</div>";
+
+echo "</div>";
+}
+
+
+?>
 </body>
 </html>
