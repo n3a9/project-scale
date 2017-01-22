@@ -2,7 +2,7 @@
 	<head>
 		<link rel="stylesheet" type="text/css" href="style.css">
 
-		 <script src="https://www.gstatic.com/firebasejs/3.6.6/firebase.js"></script>
+				 <script src="https://www.gstatic.com/firebasejs/3.6.6/firebase.js"></script>
     <script src="creds/creds.js"></script>
     <script>firebase.initializeApp(config);</script>
     <script src="https://cdn.firebase.com/libs/firebaseui/1.0.0/firebaseui.js"></script>
@@ -19,8 +19,7 @@
     <script src="js/authvar.js"></script>
 	</head>
 
-<body>
-
+	<body>
 <div class="sup">
 <ul>
 	<li><a href="main_page.php" style="color: #FFF; font-size: 1.2rem;">Explore</a></li>
@@ -43,9 +42,18 @@ $id =0;
 					<h1 style="font-size:1.5em; margin-bottom: -.2em;">Name of Project</h1><br>
 					<input type='text' name='name_of_project'  style="width: 500px; height: 30px;"><br>
 					<h1 style="font-size:1.5em; margin-bottom: -.2em; padding-top: 1em;">Description</h1>
-					<input type='text' name='description' style="width: 600px; height: 250px;">
+					<textarea name='description' style="width: 600px; height: 250px; font-size:14px"></textarea>
 					<h1 style="font-size:1.5em; margin-bottom: -.2em; padding-top: 1em;">Looking For</h1>
 					<input type='text' name='looking_at' style="width: 500px; height: 50px;">
+					<select name="categories">
+						<option value="Art/Design">Art/Design</option>
+						<option value="Computer Science" checked>Computer Science</option>
+						<option value="Engineering">Engineering</option>
+						<option value="Humanities">Humanities</option>
+						<option value="Math">Math</option>
+						<option value="Science">Science</option>
+						<option value="Other">O</option>
+					</select>
 					<input type='submit' style="border: none; background-color: #FFF; margin-top: 2em; width: 75px; height: 30px;">
 				</form>
 			</center>

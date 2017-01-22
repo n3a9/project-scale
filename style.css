@@ -52,11 +52,14 @@ body{
 }
 
 .sup li {
+	color: #FFF;
 	list-style: none;
 	display: inline-block;
 	padding-right: 2em;
 }
 
-
+.sup a:hover{
+	text-decoration: none;
+}
 
 	
