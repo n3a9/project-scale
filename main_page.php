@@ -1,7 +1,8 @@
 <html>
 
 
-<a href="create_project.php">create_project</a><br>
+<a href="create_project.php">create_project</a>
+<a href="account.php">my account</a><br>
 <form method='post'>
 <input type="text" id="search" name="search">
 <input type="radio" name="fields" value="all fields" checked> Search all projects
@@ -12,6 +13,7 @@
 
 
 <script>
+
 function search() {
 	
 		var keytext = document.forms[0].search.value;
@@ -69,5 +71,5 @@ for($i = 0; $i < $num_row; $i++){
 
 ?>
 </div>
-
+<div id="user_ridirect"></div>
 </html>

@@ -7,6 +7,7 @@ $id =0;
 ?>
 <body>
 <a href="main_page.php">main page</a>
+<a href="account.php">my account</a>
 <form action='post.php' method='post'>
 <input type="hidden" name='id' value="<?php echo $id; ?>">
 Name_of_project<input type='text' name='name_of_project'>
