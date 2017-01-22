@@ -18,6 +18,14 @@
 
     <script src="js/authvar.js"></script>
 
+    <script>
+      firebase.auth().onAuthStateChanged(function(user2) { user2.uid, user2.photoURL
+        if (user2) {
+          window.location.replace("explore.html");
+        }
+      });
+    </script>
+
     <script type="text/javascript">
       // FirebaseUI config.
       var uiConfig = {
@@ -91,6 +99,12 @@
             <h2 class="text-center">WHY</h2>
             <p class="text-justify">text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text </p>
           </div>
+      </div>
+    </div>
+    <div class="container">
+      <div class="row">
+        <div>
+        </div>
       </div>
     </div>
   </body>
