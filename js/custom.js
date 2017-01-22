@@ -33,4 +33,11 @@ jQuery(document).ready(function () {
 		//delete cookie?
 	});
 
+	$('.isotope').isotope({
+  // options
+  itemSelector: '.project-item',
+  layoutMode: 'fitRows'
+});
+
+
 });

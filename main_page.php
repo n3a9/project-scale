@@ -1,15 +1,16 @@
 <html>
-<head>
-<link rel="icon" href="logo.png" sizes="16x16 32x32" type="image/png">
-<link rel="stylesheet" type="text/css" href="style.css">
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
-<script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+	<head>
+		<link rel="icon" href="logo.png" sizes="16x16 32x32" type="image/png">
+		<link rel="stylesheet" type="text/css" href="style.css">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+		<script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.min.js"></script>
+		<script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.min.js"></script>
 		<script src="js/custom.js"></script>
 		<link rel="stylesheet" href="css/main.css"/>
 
@@ -28,7 +29,7 @@
 		</ul>
 		</div>
 
-<form method='post' class="pt-2">
+<form method='post'>
 
 
 <!--<label class="custom-control custom-radio">
@@ -84,7 +85,7 @@ function comment(pid) {
         }
         xmlhttp.onreadystatechange = function() {
             if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
-                document.getElementById("commenting"+pid).innerHTML = xmlhttp.responseText;
+                document.getElementById("commenting").innerHTML = xmlhttp.responseText;
             }
         };
         xmlhttp.open("GET","comment.php?pid="+pid+"&text="+text,true);
@@ -92,11 +93,29 @@ function comment(pid) {
 }
 
 </script>
-<div id='commenting'></div>
 <div id="results" >
 
-<div class="container-fluid projects-block" style="width: 90%;">
+<div class="container-fluid projects-block" id="filters" style="width: 90%;">
 
+	<div class="row">
+		<ul class="option-set mx-auto" data-option-key="filter">
+					<li><a href="#filter" class="selected" data-option-value="*">All</a></li>
+					<li>/</li>
+					<li><a href="#filter" data-option-value=".art">Art/Design</a></li>
+					<li>/</li>
+					<li><a href="#filter" data-option-value=".cs">Computer Science</a></li>
+					<li>/</li>
+					<li><a href="#filter" data-option-value=".engineering">Engineering</a></li>
+					<li>/</li>
+					<li><a href="#filter" data-option-value=".humanities">Humanities</a></li>
+					<li>/</li>
+					<li><a href="#filter" data-option-value=".math">Math</a></li>
+					<li>/</li>
+					<li><a href="#filter" data-option-value=".science">Science</a></li>
+					<li>/</li>
+					<li><a href="#filter" data-option-value=".other">Other</a></li>
+				</ul>
+	</div>
 
 <?php
 
@@ -126,10 +145,34 @@ $num_row = $mydata->num_rows;
 <?php
 
 //FIXME: EDIT THE STYLE OF THIS
-echo "<div class='row projects' >";
+echo "<div class='row projects isotope' >";
 for($i = 0; $i < $num_row; $i++){
 	$row = $mydata->fetch_assoc();
-	echo "<div  class='col-md-4 project-item shadow'>
+	echo "<div  class='col-md-4 project-item ";
+
+	if($row['category'] == "Art/Design"){
+		echo "art";
+	}
+	else if($row['category'] == "Computer Science"){
+		echo "cs";
+	}
+	else if($row['category'] == "Engineering"){
+		echo "engineering";
+	}
+	else if($row['category'] == "Humanities"){
+		echo "humanities";
+	}
+	else if($row['category'] == "Math"){
+		echo "math";
+	}
+	else if($row['category'] == "Science"){
+		echo "science";
+	}
+	else {
+		echo "other";
+	}
+
+	echo " shadow'>
 			<div class='picture'>
 				<h5>
                 <a href='#'>".$row['name_of_project']."</a>
@@ -161,20 +204,31 @@ for($i = 0; $i < $num_row; $i++){
 	  <p>Looking for ".$row['looking_at']."</p>
 	  </div>
 	  <div class='modal-body'>";
-	  $mydata2 = $mysqli->query("SELECT * FROM `comments`,account WHERE account.uid = comments.uid AND pid = '".$row['id']."'ORDER BY datetime DESC;");
+	  $mydata2 = $mysqli->query("SELECT * FROM `comments`,account WHERE account.uid = comments.uid AND pid = '".$row['id']."'ORDER BY datetime ASC;");
 	  $num_row2 = $mydata2->num_rows;
-
+	  ?>
+<div id='commenting'>
+<?php
 for($c = 0; $c < $num_row2; $c++){
 	$row2 = $mydata2->fetch_assoc();
-	echo "<b>".$row2['username']."</b>: ".$row2['text']."<br>";
+	echo "<hr>";
+	echo "<font color='gray'>".$row2['username']."</font> : ".$row2['text']."";
 }
-
+?>
+</div>
+<?php
 	  echo"
 
       </div>
       <div class='modal-footer'>
-        <div class='comment_div'><input type='text' placeholder='write a comment' name='".$row['id']."' id='".$row['id']."'>
-		<button onClick=\"comment('".$row['id']."')\"> send </button></div>
+        <div class='col-lg-12'>
+		<div class='input-group'>
+		  <input type='text' class='form-control' placeholder='write a comment...' name='".$row['id']."' id='".$row['id']."'>
+		  <span class='input-group-btn'>
+			<button class='btn btn-primary' onClick=\"comment('".$row['id']."')\"> send </button>
+		  </span>
+		</div>
+	  </div>
       </div>
     </div>
   </div>

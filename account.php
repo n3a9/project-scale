@@ -43,8 +43,8 @@
 	<img class="shadow" id="profile_pic" src="<?php echo $row['photourl'];?>" width="300" height="300">
 <br>
 	<div style="padding-top: 2em;">
-		<h2>Name : <span><?php echo $username; ?></span></h2><br>
-		<h2 style="margin-top: -1em;">email: <span><?php echo $row['email']?></span></h2><br>
+		<h2><?php echo $username; ?></h2><br>
+		<h5 style="margin-top: -1em;"><?php echo $row['email']?></h5><br>
 		<?php
 		if ($uid != $_COOKIE['uid']){
 			echo "<p style='font-size: .8em; font-weight: normal; margin-top: -1em;'>".$row['bio']."</p>";
@@ -52,9 +52,9 @@
 		else{
 			echo "
 			<form method='post' action='edit_profile.php'>
-			<div class='col-lg-6'>
-				<div class='input-group'>
-				  <input type='text' name='bio' class='form-control' placeholder='Write here your bio...' value='".$row['bio']."'>
+			<div class='col-lg-9'>
+			<div class='input-group'>
+			<input type='text' name='bio' style='margin-left:-12' class='form-control' placeholder='Write here your bio...' value='".$row['bio']."'>
 				  <span class='input-group-btn'>
 					<button class='btn btn-primary' type='submit'><i class='fa fa-pencil' aria-hidden='true'></i></button>
 				  </span>
@@ -66,6 +66,28 @@
 		?>
 
 </div>
+
+<script>
+function comment(pid) {
+
+		var text = document.getElementById(pid).value;
+		document.getElementById(pid).value = "";
+
+        if (window.XMLHttpRequest) {
+            xmlhttp = new XMLHttpRequest();
+        } else {
+            xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+        }
+        xmlhttp.onreadystatechange = function() {
+            if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+                document.getElementById("commenting").innerHTML = xmlhttp.responseText;
+            }
+        };
+        xmlhttp.open("GET","comment.php?pid="+pid+"&text="+text,true);
+        xmlhttp.send();
+}
+
+</script>
 
 <div class="container-fluid projects-block" style="position:absolute; width:65%; margin-top:32px;right:0;">
 <?php
@@ -111,20 +133,33 @@ for($i = 0; $i < $num_row; $i++){
 	  <p>Looking for ".$row['looking_at']."</p>
 	  </div>
 	  <div class='modal-body'>";
-	  $mydata2 = $mysqli->query("SELECT * FROM `comments`,account WHERE account.uid = comments.uid AND pid = '".$row['id']."'ORDER BY datetime DESC;");
+	  $mydata2 = $mysqli->query("SELECT * FROM `comments`,account WHERE account.uid = comments.uid AND pid = '".$row['id']."'ORDER BY datetime ASC;");
 	  $num_row2 = $mydata2->num_rows;
-
+	  ?>
+<div id='commenting'>
+<?php
 for($c = 0; $c < $num_row2; $c++){
 	$row2 = $mydata2->fetch_assoc();
-	echo "<b>".$row2['username']."</b>: ".$row2['text']."<br>";
+	echo "<hr>";
+	echo "<font color='gray'>".$row2['username']."</font> : ".$row2['text']."";
 }
-
+?>
+</div>
+<?php
 	  echo"
 
       </div>
       <div class='modal-footer'>
-        <div class='comment_div'><input type='text' placeholder='write a comment' name='".$row['id']."' id='".$row['id']."'>
-		<button onClick=\"comment('".$row['id']."')\"> send </button></div>
+
+	  <div class='col-lg-12'>
+		<div class='input-group'>
+		  <input type='text' class='form-control' placeholder='write a comment...' name='".$row['id']."' id='".$row['id']."'>
+		  <span class='input-group-btn'>
+			<button class='btn btn-primary' onClick=\"comment('".$row['id']."')\"> send </button>
+		  </span>
+		</div>
+	  </div>
+
       </div>
     </div>
   </div>
