@@ -10,34 +10,38 @@
     	
 		<link rel="stylesheet" href="main.css" type="text/css">
 		<link href="https://fonts.googleapis.com/css?family=Roboto:300,400" rel="stylesheet">
-
 	</head>
 	
 	<body>
-		<div class="blue">
-			<h4>the-network				About				Beta</h4>
-			<h1>the-network</h1>
+		<div>
+			<h3 class="margin-left">the-network</h3
+			><h3><a href="#about">About</a></h3
+			><h3><a href="#beta">Beta</a></h3
+			><h1 margin-left="1em">the-network</h1>
 			<br>
-			<h3>sign up for our beta!</h3>
-			
-			<form action="mailto:" method="post" enctype="text/plain">
-				E-mail:<br>
-				<input type="text" name="mail"><br>
-				<input type="submit" value="Send">
+			<h2>sign up for beta!</h2>
+			<form action="mailto:" method="post" enctype="text/plain" class="center margin-left" style="padding-bottom: 5em">
+				<br>
+				<input type="text" name="mail" value="Enter your email"><br>
+				<input type="submit" value="Submit" style="margin-bottom: 1em">
 			</form>
-			
-			
-		</div>
-		
-		<div class="black">
-			<h4>About</h4>
-			
-		</div>
-		
-		<div class="blue">
-			
 		</div>
 
+		<div class="white" id="about">
+			<h1>About</h1>
+			<br>
+			<h2>the-network is a collaborative platform to help students and professionals find team members for any projects they are working on or have ideas for.</h2>
+		</div>
+
+		<div id="beta">
+			<h1>Beta</h1>
+			<br>
+			<form action="mailto:" method="post" enctype="text/plain" class="center margin-left" style="padding-top: 0">
+				<br>
+				<input type="text" name="mail" value="Enter your email"><br>
+				<input type="submit" value="Submit" style="margin-bottom: 1em">
+			</form>
+		</div>
 	</body>
 
 </html>
