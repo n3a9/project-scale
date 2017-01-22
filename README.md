@@ -1,7 +1,7 @@
 ![passing build](https://img.shields.io/badge/build-passing-brightgreen.svg)
 ![hack davis](https://img.shields.io/badge/HackDavis2017-hell%20yeah-brightgreen.svg)
 
-# the-network
+# scaling-pancake
 
 Today, education is more than sitting in a classroom and listening to lectures. Students strive to innovate and push boundaries, irrespective of the industry space. One of the best ways to explore potential is to create your own projects.
 
