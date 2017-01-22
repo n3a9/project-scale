@@ -1,15 +1,12 @@
 <html>
-	<head>
-		<link rel="icon" href="logo.png" sizes="16x16 32x32" type="image/png">
-		<link rel="stylesheet" type="text/css" href="style.css">
-		<script src="https://www.gstatic.com/firebasejs/3.6.6/firebase.js"></script>
-		<script src="creds/creds.js"></script>
-		<script>firebase.initializeApp(config);</script>
-		<script src="https://cdn.firebase.com/libs/firebaseui/1.0.0/firebaseui.js"></script>
-		<link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/1.0.0/firebaseui.css" />
-		<script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
-		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+<head>
+<link rel="icon" href="logo.png" sizes="16x16 32x32" type="image/png">
+<link rel="stylesheet" type="text/css" href="style.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+<script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.min.js"></script>
@@ -17,8 +14,10 @@
 		<link rel="stylesheet" href="css/main.css"/>
 
 		<script src="js/authvar.js"></script>
-		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
-  	<script src="http://cdn.jsdelivr.net/jquery.validation/1.13.1/jquery.validate.min.js"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
+  <script src="http://cdn.jsdelivr.net/jquery.validation/1.13.1/jquery.validate.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
 </head>
 <body>
 		<div class="sup">
@@ -26,14 +25,13 @@
 			<li><a href="main_page.php" style="color: #FFF; font-size: 1.2rem;">Explore</a></li>
 			<li><a href="create_project.php" style="color: #FFF; font-size: 1.2rem;">Create</a></li>
 			<li><a href="account.php" style="color: #FFF; font-size: 1.2rem;">Profile</a></li>
-			<li><a href="#" id="signout" style="color: #FFF; font-size: 1.2rem;">Sign Out</a></li>
 		</ul>
 		</div>
 
-<form method='post'>
+<form method='post' class="pt-2">
 
 
-<label class="custom-control custom-radio">
+<!--<label class="custom-control custom-radio">
   <input id="radio1" name="fields" type="radio" value="all fields" checked class="custom-control-input">
   <span class="custom-control-indicator"></span>
   <span class="custom-control-description">Search all projects</span>
@@ -43,7 +41,7 @@
   <span class="custom-control-indicator"></span>
   <span class="custom-control-description">Search a category (example: designer)</span>
 </label>
-<br>
+<br>-->
 <div class="col-lg-6">
     <div class="input-group">
       <input type="text" class="form-control" name="search" id="search" placeholder="Search for..."></form>
