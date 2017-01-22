@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Name</title>
+
+    <script src="https://www.gstatic.com/firebasejs/3.6.6/firebase.js"></script>
+    <script src="creds/creds.js"></script>
+    <script>firebase.initializeApp(config);</script>
+    <script src="https://cdn.firebase.com/libs/firebaseui/1.0.0/firebaseui.js"></script>
+    <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/1.0.0/firebaseui.css" />
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="css/main.css"/>
+
+    <script type="text/javascript">
+      // FirebaseUI config.
+      var uiConfig = {
+        signInSuccessUrl: '<url-to-redirect-to-on-success>',
+        signInOptions: [
+          // Leave the lines as is for the providers you want to offer your users.
+          firebase.auth.GoogleAuthProvider.PROVIDER_ID,
+          firebase.auth.FacebookAuthProvider.PROVIDER_ID,
+          firebase.auth.TwitterAuthProvider.PROVIDER_ID,
+          firebase.auth.GithubAuthProvider.PROVIDER_ID,
+          firebase.auth.EmailAuthProvider.PROVIDER_ID
+        ],
+        // Terms of service url.
+        tosUrl: '<your-tos-url>'
+      };
+
+      // Initialize the FirebaseUI Widget using Firebase.
+      var ui = new firebaseui.auth.AuthUI(firebase.auth());
+      // The start method will wait until the DOM is loaded.
+      ui.start('#firebaseui-auth-container', uiConfig);
+    </script>
+  </head>
+  <body>
+
+    <div class="modal fade" id="loginreg" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Login</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body" id="firebaseui-auth-container">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="jumbotron front-block">
+      <div class="container">
+        <h1 class="display-3 text-center">Hello, Welcome to <b>The Network</b></h1>
+        <div class="row">
+          <a href="#" class="wide redish mx-auto" data-toggle="modal" data-target="#loginreg">
+    				<i class="icon-tasks"></i>
+    				<h2>Log In</h2>
+    			</a>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <div class="row whys">
+          <div class="col-md-4">
+            <div class="text-center">
+              <img src="https://placeholdit.imgix.net/~text?txtsize=33&txt=250%C3%97250&w=250&h=250" alt="..." class="img-fluid rounded-circle">
+            </div>
+            <h2 class="text-center">WHY</h2>
+            <p class="text-justify">text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text </p>
+          </div>
+          <div class="col-md-4">
+            <div class="text-center">
+              <img src="https://placeholdit.imgix.net/~text?txtsize=33&txt=250%C3%97250&w=250&h=250" alt="..." class="img-fluid rounded-circle">
+            </div>
+            <h2 class="text-center">WHY</h2>
+            <p class="text-justify">text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text </p>
+          </div>
+          <div class="col-md-4">
+            <div class="text-center">
+              <img src="https://placeholdit.imgix.net/~text?txtsize=33&txt=250%C3%97250&w=250&h=250" alt="..." class="img-fluid rounded-circle">
+            </div>
+            <h2 class="text-center">WHY</h2>
+            <p class="text-justify">text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text </p>
+          </div>
+      </div>
+    </div>
+  </body>
+</html>

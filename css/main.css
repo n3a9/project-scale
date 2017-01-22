@@ -1,0 +1,59 @@
+.front-block {
+  background-color: #3498db;
+  min-height: 40em;
+}
+.front-block h1 {
+  margin-top: 2.5em;
+}
+.front-block a {
+  margin-top: 5em;
+}
+
+.whys h2 {
+  padding-top: 1em;
+}
+
+
+
+.redish{background:#e74c3c;}
+
+a.wide, a.box{
+	text-decoration:none;
+	color:#fff;
+	-webkit-transition: -webkit-transform 0.1s;
+	position:relative;
+	overflow:hidden;
+}
+a.wide h2, a.box h2{
+	position:absolute;
+	bottom:5px;
+	font-size:14px;
+}
+a.wide h2.top, a.box h2.top{
+	position:static;
+
+	font-size:14px;
+}
+a.wide i, a.box i{
+font-size: 60px;
+text-align: center;
+display: block;
+margin-top: 10px; /* outside Codepen is actually 30px */
+}
+a.wide:hover, a.box:hover{
+	-webkit-transform: scale(1.05);
+}
+
+a.wide:active, a.box:active{
+	-webkit-transform: scale(1);
+}
+.wide{
+	width:270px;
+	height:120px;
+	overflow:hidden;
+	font-size:13px;
+	padding:10px;
+	display:block;
+	float:left;
+	margin:5px;
+}
