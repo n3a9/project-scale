@@ -1,5 +1,5 @@
 ![passing build](https://img.shields.io/badge/build-passing-brightgreen.svg)
-![hack davis](https://img.shields.io/badge/HackDavis-hell%20yeah-brightgreen.svg)
+![hack davis](https://img.shields.io/badge/HackDavis2017-hell%20yeah-brightgreen.svg)
 
 # the-network
 
