@@ -74,6 +74,15 @@ body{
 	padding-right: 2em;
 }
 
+.sup a{
+	color: #FFF !important;
+}
+
+.sup a:hover{
+	text-decoration: none;
+	color: #D8D8D8 !important; 
+}
+
 .tags{
 	color:#999999;
 }

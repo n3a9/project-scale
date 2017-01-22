@@ -51,7 +51,7 @@ $id =0;
 						<option value="Humanities">Humanities</option>
 						<option value="Math">Math</option>
 						<option value="Science">Science</option>
-						<option value="Other">O</option>
+						<option value="Other">Other</option>
 					</select><br>
 					<textarea name='description' style="margin-top:1.7em; width: 600px; height: 100px; font-size:14px;"></textarea><br>
 					<input type='submit' style="border: none; background-color: #D8D8D8; margin-top: 2em; width: 75px; height: 30px;">
