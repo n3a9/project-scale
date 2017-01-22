@@ -42,6 +42,7 @@
   <span class="custom-control-description">Search a category (example: designer)</span>
 </label>
 <br>-->
+<center><br>
 <div class="col-lg-6">
     <div class="input-group">
       <input type="text" class="form-control" name="search" id="search" placeholder="Search for..."></form>
@@ -49,7 +50,7 @@
         <button onClick="search()" class="btn btn-secondary" ><i class="fa fa-search" aria-hidden="true"></i></button>
       </span>
     </div>
-  </div>
+  </div></center>
 
 <script>
 
@@ -94,7 +95,7 @@ function comment(pid) {
 </script>
 <div id="results" >
 
-<div class="container-fluid projects-block" id="filters" style="width: 90%;">
+<div class="container-fluid projects-block" id="filters" style="margin-left:1%; width: 98%;">
 
 	<ul class="option-set mx-auto" data-option-key="filter">
 			<li><a href="#filter" class="selected" data-option-value="*">All</a></li>
