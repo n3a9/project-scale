@@ -26,9 +26,7 @@
 
     <script src="js/authvar.js"></script>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
-  <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
   <script src="http://cdn.jsdelivr.net/jquery.validation/1.13.1/jquery.validate.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
 
 </head>
 <body>
@@ -37,6 +35,7 @@
 	<li><a href="main_page.php" style="color: #FFF; font-size: 1.2rem;">Explore</a></li>
 	<li><a href="create_project.php" style="color: #FFF; font-size: 1.2rem;">Create</a></li>
 	<li><a href="account.php" style="color: #FFF; font-size: 1.2rem;">Profile</a></li>
+  <li><a href="#" id="signout" style="color: #FFF; font-size: 1.2rem;">Sign Out</a></li>
 </ul>
 </div>
 
@@ -46,7 +45,7 @@
 	<div style="padding-top: 2em;">
 		<h2>Name : <span><?php echo $username; ?></span></h2><br>
 		<h2 style="margin-top: -1em;">email: <span><?php echo $row['email']?></span></h2><br>
-		<?php 
+		<?php
 		if ($uid != $_COOKIE['uid']){
 			echo "<p style='font-size: .8em; font-weight: normal; margin-top: -1em;'>".$row['bio']."</p>";
 		}
@@ -65,7 +64,7 @@
 			</form>";
 		}
 		?>
-		
+
 </div>
 
 <div class="container-fluid projects-block" style="position:absolute; width:65%; margin-top:32px;right:0;">
@@ -73,7 +72,7 @@
 include('db.php');
 $mydata = $mysqli->query("SELECT * FROM `project` WHERE username = '".$username."' ORDER BY datetime DESC;");
 $num_row = $mydata->num_rows;
-?> 
+?>
 <?php
 
 //FIXME: EDIT THE STYLE OF THIS
@@ -91,7 +90,7 @@ for($i = 0; $i < $num_row; $i++){
 	echo $row['looking_at'];
 	echo "<br><i class='tags'>#".$row['category']."</i>
 		</div>";
-	
+
 	echo "
 	<!-- Button trigger modal -->
 <button type='button' class='lateral' data-toggle='modal' data-target='#myModal".$row['id']."'>
@@ -119,9 +118,9 @@ for($c = 0; $c < $num_row2; $c++){
 	$row2 = $mydata2->fetch_assoc();
 	echo "<b>".$row2['username']."</b>: ".$row2['text']."<br>";
 }
-	  
+
 	  echo"
-        
+
       </div>
       <div class='modal-footer'>
         <div class='comment_div'><input type='text' placeholder='write a comment' name='".$row['id']."' id='".$row['id']."'>

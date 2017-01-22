@@ -27,4 +27,10 @@ jQuery(document).ready(function () {
     offset: '90%'
   });
 
+	$( "#signout" ).click(function() {
+		firebase.auth().signOut();
+		window.location.replace("index.html");
+		//delete cookie?
+	});
+
 });
