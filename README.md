@@ -4,9 +4,12 @@ An online platform for users to post projects and find team members to work with
 
 ## Sign in
 
-Sign in using Github, Facebook, and Google
+Sign in using Google, Facebook, Twitter, Github and email.
 
 ## Project Posting
 
-Each project will have a description, thumbnail (auto generated if none is uploaded), tags for easy search and organization.
-Integrate Github repository with the project posting.
+Each project has a name, description, optional image, and people with skills that they are looking for. There is also integrated search in project description, as well as wanted team members.
+
+## License
+
+Licensed under MIT
