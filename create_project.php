@@ -23,9 +23,9 @@
 
 <div class="sup">
 <ul>
-	<li><a href="main_page.php" style="color: #FFF;">Explore</a></li>
-	<li><a href="create_project.php" style="color: #FFF;">Create</a></li>
-	<li><a href="account.php" style="color: #FFF;">Profile</a></li>
+	<li><a href="main_page.php" style="color: #FFF; font-size: 1.2rem;">Explore</a></li>
+	<li><a href="create_project.php" style="color: #FFF; font-size: 1.2rem;">Create</a></li>
+	<li><a href="account.php" style="color: #FFF; font-size: 1.2rem;">Profile</a></li>
 </ul>
 </div>
 

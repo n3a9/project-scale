@@ -23,9 +23,9 @@
 <body>
 <div class="sup">
 <ul>
-	<li><a href="main_page.php" style="color: #FFF;">Explore</a></li>
-	<li><a href="create_project.php" style="color: #FFF;">Create</a></li>
-	<li><a href="account.php" style="color: #FFF;">Profile</a></li>
+	<li><a href="main_page.php" style="color: #FFF; font-size: 1.2rem;">Explore</a></li>
+	<li><a href="create_project.php" style="color: #FFF; font-size: 1.2rem;">Create</a></li>
+	<li><a href="account.php" style="color: #FFF; font-size: 1.2rem;">Profile</a></li>
 </ul>
 </div>
 
@@ -33,13 +33,13 @@
 	<img class="shadow" id="profile_pic" src="/profile.jpg" width="300" height="300">
 <br>
 	<div style="padding-top: 2em;">
-		<h2>Name : <span><?php echo $username; ?></span></h2><br>
-		<h2 style="margin-top: -1em;">email: <span><?php echo $row['email']?></span></h2><br>
+		<h2>Name : <span><!--<?php echo $username; ?>--></span></h2><br>
+		<h2 style="margin-top: -1em;">email: <span><!--<?php echo $row['email']?>--></span></h2><br>
 		<p style="font-size: .8em; font-weight: normal; margin-top: -1em;">this is where the bio will be</p>
 	</div>
 </div>
 
-<?php
+<!--<?php
  $uid = $_COOKIE['uid'];
  include('db.php');
  $mydata = $mysqli->query("SELECT * FROM `account` WHERE uid = '".$uid."'");
@@ -74,6 +74,6 @@ for($i = 0; $i < $num_row; $i++){
 	echo "</div>";
 }
 
-?>
+?>-->
 </body>
 </html>

@@ -44,8 +44,19 @@ body{
 	box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
 }
 
-.sup{
+.sup {
 	background-color:#3498db;
 	width:100%;
+	padding-top: 1em;
+	padding-bottom: .2em;
 }
 
+.sup li {
+	list-style: none;
+	display: inline-block;
+	padding-right: 2em;
+}
+
+
+
+	
