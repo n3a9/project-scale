@@ -1,8 +1,30 @@
 <html>
+<head>
+<link rel="stylesheet" type="text/css" href="style.css">
+</head>
 
+<div class="sup">
+<table width="100%">
+	<tr>
+		<td width="33.33%">
+			<center>
+			<a href="create_project.php"><div class="button shadow">NEW PROJECT</div></a>
+			</center>
+		</td>
+		<td width="33.33%">
+			<center>
+			<a href="main_page.php"><div class="button shadow">HOME</div></a>
+			</center>
+		</td>
+		<td  width="33.33%">
+			<center>
+			<a href="account.php"><div class="button shadow">MY ACCOUNT</div></a>
+			</center>
+		</td>
+	</TR>
+</TABLE>
+</div>
 
-<a href="create_project.php">create_project</a>
-<a href="account.php">my account</a><br>
 <form method='post'>
 <input type="text" id="search" name="search">
 <input type="radio" name="fields" value="all fields" checked> Search all projects
@@ -35,6 +57,8 @@ function search() {
 </script>
 <div id="results">
 <?php
+
+
 include('db.php');
 
 if (isset($_POST['search'])){
@@ -58,15 +82,14 @@ $num_row = $mydata->num_rows;
 
 for($i = 0; $i < $num_row; $i++){
 	$row = $mydata->fetch_assoc();
-	echo "Name of project:";
-	echo $row['name_of_project'];
-	echo "<br>Description: ";
+	echo "<div class = 'projects shadow'>";
+	echo "<p style='text-align:center'><b>".$row['name_of_project']."</b></p>";
 	echo $row['description'];
 	echo "<br>Looking for: ";
 	echo $row['looking_at'];
 	echo "<br>Username:";
 	echo $row['username'];
-	echo "<br><br>";
+	echo "</div>";
 }
 
 ?>

@@ -24,8 +24,7 @@
 </TABLE>
 </div>
 <?php
-$uid = 1;
-
+ $uid = $_COOKIE['uid'];
  include('db.php');
  $mydata = $mysqli->query("SELECT * FROM `account` WHERE uid = '".$uid."'");
  $row = $mydata->fetch_assoc();
