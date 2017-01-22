@@ -14,17 +14,20 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.min.js"></script>
+    <script src="js/custom.js"></script>
     <link rel="stylesheet" href="css/main.css"/>
 
     <script src="js/authvar.js"></script>
 
-    <script>
-      firebase.auth().onAuthStateChanged(function(user2) { user2.uid, user2.photoURL
+    <!--<script>
+      firebase.auth().onAuthStateChanged(function(user2) {
         if (user2) {
           window.location.replace("explore.html");
         }
       });
-    </script>
+    </script>-->
 
     <script type="text/javascript">
       // FirebaseUI config.
@@ -54,7 +57,7 @@
       <div class="modal-dialog" role="document">
         <div class="modal-content">
           <div class="modal-header">
-            <h5 class="modal-title">Login</h5>
+            <h5 class="modal-title">Sign in...</h5>
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
               <span aria-hidden="true">&times;</span>
             </button>
@@ -67,32 +70,29 @@
 
     <div class="jumbotron front-block">
       <div class="container">
-        <h1 class="display-3 text-center">Hello, Welcome to <b>The Network</b></h1>
+        <h1 class="display-3 text-center animated tada">Hello, Welcome to <b>The Network</b></h1>
         <div class="row">
-          <a href="#" class="wide redish mx-auto" data-toggle="modal" data-target="#loginreg">
-    				<i class="icon-tasks"></i>
-    				<h2>Log In</h2>
-    			</a>
+          <button type="button" class="btn btn-secondary btn-xlarge mx-auto" data-toggle="modal" data-target="#loginreg">Sign In</button>
         </div>
       </div>
     </div>
     <div class="container">
       <div class="row whys">
-          <div class="col-md-4">
+          <div class="col-md-4 wp1">
             <div class="text-center">
               <img src="https://placeholdit.imgix.net/~text?txtsize=33&txt=250%C3%97250&w=250&h=250" alt="..." class="img-fluid rounded-circle">
             </div>
             <h2 class="text-center">WHY</h2>
             <p class="text-justify">text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text </p>
           </div>
-          <div class="col-md-4">
+          <div class="col-md-4 wp1 delay-05s">
             <div class="text-center">
               <img src="https://placeholdit.imgix.net/~text?txtsize=33&txt=250%C3%97250&w=250&h=250" alt="..." class="img-fluid rounded-circle">
             </div>
             <h2 class="text-center">WHY</h2>
             <p class="text-justify">text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text </p>
           </div>
-          <div class="col-md-4">
+          <div class="col-md-4 wp1 delay-1s">
             <div class="text-center">
               <img src="https://placeholdit.imgix.net/~text?txtsize=33&txt=250%C3%97250&w=250&h=250" alt="..." class="img-fluid rounded-circle">
             </div>
@@ -101,11 +101,65 @@
           </div>
       </div>
     </div>
-    <div class="container">
+
+    <div class="container-fluid">
       <div class="row">
-        <div>
+        <h1 class="display-4 ml-5 mt-5 mb-3 wp2" style="color:#3498db;"><b>Check out some of the amazing projects we host...</b></h1>
+      </div>
+    </div>
+
+    <div class="container-fluid projects-block">
+      <div class="row projects">
+        <div class="col-md-4 project-item wp3 delay-05s">
+          <div class="picture">
+            <a href="#" title="Project Name 1">
+              <img src="https://placeholdit.imgix.net/~text?txtsize=32&txt=338%C3%97211&w=338&h=211" alt="">
+              <div class="image-overlay-link"></div>
+            </a>
+            <div class="project-description">
+              <h5>
+                <a href="#">Project Name 1</a>
+              </h5>
+              <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4 project-item wp3 delay-1s">
+          <div class="picture">
+            <a href="#" title="Project Name 2">
+              <img src="https://placeholdit.imgix.net/~text?txtsize=32&txt=338%C3%97211&w=338&h=211" alt="">
+              <div class="image-overlay-link"></div>
+            </a>
+            <div class="project-description">
+              <h5>
+                <a href="#">Project Name 2</a>
+              </h5>
+              <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4 project-item wp3 delay-105s">
+          <div class="picture">
+            <a href="#" title="Project Name 3">
+              <img src="https://placeholdit.imgix.net/~text?txtsize=32&txt=338%C3%97211&w=338&h=211" alt="">
+              <div class="image-overlay-link"></div>
+            </a>
+            <div class="project-description">
+              <h5>
+                <a href="#">Project Name 3</a>
+              </h5>
+              <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.</p>
+            </div>
+          </div>
         </div>
       </div>
+    </div>
+
+    <div class="footer wp4 delay-1s">
+      <h1 class="display-4 text-center"><a href="" data-toggle="modal" data-target="#loginreg">Sign in</a> to find partners, host projects, and more!</h1>
+      <p class="text-center">Designed, Programmed, and Published by ................................. at HackDavis</p>
     </div>
   </body>
 </html>
