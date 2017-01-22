@@ -1,29 +1,42 @@
-html {
-	background-color: #4DD0E1;
-	font-family: 'Roboto', sans-serif;
-	font-weight: 300;
-}
-
 html, body {
+    background-color: #4DD0E1;
 	margin: 0;
 	padding: 0;
 	font-family: 'Roboto', sans-serif;
-	
+    font-weight: 300;
 }
 
-h1 {
+nav ul {
+    padding-left: 2em;
+    padding-top: 1em;
+}
+
+nav li {
+    list-style: none;
+    display: inline-block;
+    padding-right: 2em;
+    font-size: 1.3em;
+}
+
+#header {
+    padding-top: 1.5em;
+}
+
+form {
+    margin: 0 auto;
+    padding-top: 2em;
+}
+
+input {
+    border-width: 0px;
+}
+
+button {
+    color: #F4FFFD; font-weight:300; background-color: #D06E6E;
+}
+
+h1, h2, h3, p{
 	text-align: center;
-}
-
-h2{
-	text-align: center;
-	padding-bottom:0;
-	font-size: 1em;
-}
-
-h3{
-	display: inline-block;
-	padding-right: 5em;	
 }
 
 a{
