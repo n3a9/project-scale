@@ -7,7 +7,7 @@ Today, education is more than sitting in a classroom and listening to lectures. 
 
 Sometimes, however, one need collaboraters when learning a new skill, or even if the project is too big. In addition, collaborating adds different perspectives and more versatility to a team, allowing for different paths that the project can take.
 
-[name] is an online platform for students to post projects and find collaborators with specific skills. Each posting will give a short description of the project, and the skills of people that would work best.
+scaling-pancake is an online platform for students to post projects and find collaborators with specific skills. Each posting will give a short description of the project, and the skills of people that would work best.
 
 Those looking to work on a project can then search and filter for projects relevent to their area of expertise, or skill that they are currently learning. From there, the two will get in touch and thus be able to collaborate on the projects.
 
