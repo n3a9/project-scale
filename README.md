@@ -21,7 +21,7 @@ Sign in using Google, Facebook, Twitter, Github and email.
 
 ### Project Posting
 
-Each project has a name, description, optional image, and people with skills that they are looking for. In addition, there is an optional location field, in which you can put your zip code in order to give an approximate location. This way, students could also meet in perosn and collaborate.
+Each project has a name, description, optional image, and people with skills that they are looking for. In addition, there is an optional location field, in which you can put your zip code in order to give an approximate location. This way, we can see the project density on an overall map.
 
 ### Organization/Exploration
 
