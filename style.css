@@ -23,10 +23,9 @@ body{
 .lateral{
 	background:none;
 	position:absolute;
-	bottom:5;
-	right:5;
+	bottom:8;
+	right:8;
 	border:0;
-	padding:4px;
 	cursor:pointer;
 	outline:none;
 }
@@ -39,7 +38,7 @@ body{
 	border:10px solid white;
 }
 
-.projects{
+.projects_a{
 	margin:8px;
 	width:350px;
 	height:200px;
