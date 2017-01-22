@@ -1,7 +1,7 @@
 <html>
 	<head>
 		<link rel="stylesheet" type="text/css" href="style.css">
-
+		<link rel="icon" href="logo.png" sizes="16x16 32x32" type="image/png">
 				 <script src="https://www.gstatic.com/firebasejs/3.6.6/firebase.js"></script>
     <script src="creds/creds.js"></script>
     <script>firebase.initializeApp(config);</script>
@@ -53,7 +53,7 @@ $id =0;
 						<option value="Science">Science</option>
 						<option value="Other">Other</option>
 					</select><br>
-					<textarea name='description' style="margin-top:1.7em; width: 600px; height: 100px; font-size:14px;"></textarea><br>
+					<input type='text' name='looking_at' placeholder="example: designer" style="margin-top:1.7em; width: 500px; height: 30px; font-size:14px;"><br>
 					<input type='submit' style="border: none; background-color: #D8D8D8; margin-top: 2em; width: 75px; height: 30px;">
 				</form>
 			</center>

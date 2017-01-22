@@ -33,6 +33,15 @@ body{
 	color:#999999;
 }
 
+.profile{
+	width:35%;
+	position:fixed;
+	left:0;
+	padding-left:16px;
+}
+
+
+
 #profile_pic{
 	margin-top:32px;
 	border:10px solid white;

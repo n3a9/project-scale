@@ -1,5 +1,6 @@
 <html>
 <head>
+<link rel="icon" href="logo.png" sizes="16x16 32x32" type="image/png">
 <?php
  $uid = $_COOKIE['uid'];
  include('db.php');
@@ -39,7 +40,7 @@
 </ul>
 </div>
 
-<div style="width:80%; margin: 0 auto; padding-top: 1em;">
+<div class="profile">
 	<img class="shadow" id="profile_pic" src="<?php echo $row['photourl'];?>" width="300" height="300">
 <br>
 	<div style="padding-top: 2em;">
@@ -64,25 +65,32 @@
 			</form>";
 		}
 		?>
-	</div>
+		
+</div>
 
-
+<div class="container-fluid projects-block" style="position:absolute; width:65%; margin-top:32px;right:0;">
 <?php
 include('db.php');
 $mydata = $mysqli->query("SELECT * FROM `project` WHERE username = '".$username."' ORDER BY datetime DESC;");
 $num_row = $mydata->num_rows;
 ?> 
 <?php
-//FIXME: EDIT THE STYLE OF THIS
 
+//FIXME: EDIT THE STYLE OF THIS
+echo "<div class='row projects' >";
 for($i = 0; $i < $num_row; $i++){
 	$row = $mydata->fetch_assoc();
-	echo "<div class = 'projects_a shadow'>";
-	echo "<p style='text-align:center'><b>".$row['name_of_project']."</b></p><div style='height:50px;overflow:hidden;text-overflow:ellipsis;'>";
+	echo "<div  class='col-md-4 project-item shadow'>
+			<div class='picture'>
+				<h5>
+                <a href='#'>".$row['name_of_project']."</a>
+				</h5>
+              <div style='height:57px;font-size:0.8em;overflow:hidden;text-overflow:ellipsis;'>";
 	echo $row['description'];
 	echo "</div><br>Looking for: ";
 	echo $row['looking_at'];
-	echo "<br><i class='tags'>#".$row['category']."</i>";
+	echo "<br><i class='tags'>#".$row['category']."</i>
+		</div>";
 	
 	echo "
 	<!-- Button trigger modal -->
@@ -125,8 +133,8 @@ for($c = 0; $c < $num_row2; $c++){
 
 echo "</div>";
 }
-
-
+echo "</div>";
 ?>
+</div>
 </body>
 </html>
