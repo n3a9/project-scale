@@ -1,6 +1,3 @@
-![passing build](https://img.shields.io/badge/build-passing-brightgreen.svg)
-![hack davis](https://img.shields.io/badge/HackDavis2017-hell%20yeah-brightgreen.svg)
-
 # project-scale
 
 Today, education is more than sitting in a classroom and listening to lectures. Students strive to innovate and push boundaries, irrespective of the industry space. One of the best ways to explore potential is to create your own projects.
@@ -10,8 +7,6 @@ Sometimes, however, one need collaboraters when learning a new skill, or even if
 Project Scale is an online platform for students to post projects and find collaborators with specific skills. Each posting will give a short description of the project, and the skills of people that would work best.
 
 Those looking to work on a project can then search and filter for projects relevent to their area of expertise, or skill that they are currently learning. From there, the two will get in touch and thus be able to collaborate on the projects.
-
-[insert short gif]
 
 ## Specifications
 
