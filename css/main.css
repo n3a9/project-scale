@@ -131,7 +131,6 @@
 	text-shadow: 0px 1px 1px #fff;
 	color: #666;
 	position: relative;
-	z-index: 3;
 }
 
 #filters ul li {
@@ -155,8 +154,4 @@
 	color: #080808 !important;
 	border-bottom: 1px solid #080808 !important;
 	text-decoration: none;
-}
-
-.modal {
-	width: 400px;
 }
