@@ -68,6 +68,30 @@
 </div>
 
 <script>
+var previous_id_box  = "0";
+var turned_off = false;
+function showsetting(id_setting_box){
+	if (previous_id_box != "0"){
+		$("#"+previous_id_box).css({"opacity":"0"});
+	}
+	$("#"+id_setting_box).css({"opacity":"1"});
+	if(previous_id_box == id_setting_box){
+		if (turned_off == false){
+			turned_off = true;
+			$("#"+id_setting_box).css({"opacity":"0"});
+		}
+		else{
+			turned_off = false;
+		}
+	}
+	previous_id_box = id_setting_box;
+	
+}
+
+function edit_post(){
+	
+}	
+
 function comment(pid) {
 
 		var text = document.getElementById(pid).value;
@@ -101,8 +125,16 @@ $num_row = $mydata->num_rows;
 echo "<div class='row projects' >";
 for($i = 0; $i < $num_row; $i++){
 	$row = $mydata->fetch_assoc();
-	echo "<div  class='col-md-4 project-item shadow'>
-			<div class='picture'>
+	echo "<div  class='col-md-4 project-item shadow'>";
+	
+	//FIXME: control if the user is the one which logged in
+	if(1){
+		echo 	"<button onClick=\"showsetting('setting_box_".$i."')\" class='down_arrow'><i class='fa fa-angle-down' aria-hidden='true'></i></button>
+				<div class='setting_box shadow' id='setting_box_".$i."' style='opacity:0'>
+				<div class='part_setting_box' onClick=\"edit_post()\">Edit</div>
+				<a href=\"delete_project.php?id_project=".$row['id']."\" style='color:black;text-decoration:none'><div class='part_setting_box'>Delete</div></a>
+				</div>";}
+	echo "	<div class='picture'>
 				<h5>
                 <a href='#'>".$row['name_of_project']."</a>
 				</h5>
